@@ -17,6 +17,12 @@
 
     <dependencies>
         <!-- Projekten belüli függőségek. -->
+         <dependency>
+            <groupId>hu.bme.soft.arch.colleaguestore</groupId>
+            <artifactId>colleaguestore-persistence</artifactId>
+            <version>${project.version}</version>
+            <type>ejb</type>
+        </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>colleaguestore-persistence</artifactId>
