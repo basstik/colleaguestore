@@ -8,10 +8,10 @@
         <dependent-module archiveName="colleaguestore-facade-0.1.0-SNAPSHOT.jar" deploy-path="/" handle="module:/resource/colleaguestore-facade/colleaguestore-facade">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="colleaguestore-common-0.1.0-SNAPSHOT.jar" deploy-path="/" handle="module:/resource/colleaguestore-common/colleaguestore-common">
+        <dependent-module archiveName="colleaguestore-common-0.1.0-SNAPSHOT.jar" deploy-path="/lib" handle="module:/resource/colleaguestore-common/colleaguestore-common">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="colleaguestore-domain-0.1.0-SNAPSHOT.jar" deploy-path="/" handle="module:/resource/colleaguestore-domain/colleaguestore-domain">
+        <dependent-module archiveName="colleaguestore-domain-0.1.0-SNAPSHOT.jar" deploy-path="/lib" handle="module:/resource/colleaguestore-domain/colleaguestore-domain">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="colleaguestore-business-0.1.0-SNAPSHOT.jar" deploy-path="/" handle="module:/resource/colleaguestore-business/colleaguestore-business">
