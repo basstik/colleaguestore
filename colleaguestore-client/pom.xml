@@ -1,0 +1,159 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>hu.bme.soft.arch.colleaguestore</groupId>
+        <artifactId>colleaguestore</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>colleaguestore-client</artifactId>
+    <packaging>war</packaging>
+    <name>${project.artifactId}</name>
+    <description>Colleaguestore GWT kliens</description>
+
+    <properties>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <gwt.version>2.7.0</gwt.version>
+        <gxt.version>4.0.2</gxt.version>
+    </properties>
+
+    <build>
+        <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <configuration>
+                        <sourceFileExcludes>
+                            <sourceFileExclude>**/*Async.java</sourceFileExclude>
+                        </sourceFileExcludes>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>gwt-maven-plugin</artifactId>
+                <version>${gwt.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <compileSourcesArtifacts>
+                        <artifact>hu.bme.soft.arch.colleaguestore:colleaguestore-domain</artifact>
+                    </compileSourcesArtifacts>
+                    <modules>
+                        <module>hu.bme.soft.arch.colleaguestore.Client</module>
+                    </modules>
+                    <compileReport>true</compileReport>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>draftCompile</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>gwt-maven-plugin</artifactId>
+                        <configuration>
+                            <module>hu.bme.soft.arch.colleaguestore.ClientDraft</module>
+                            <draftCompile>true</draftCompile>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.google.gwt</groupId>
+                <artifactId>gwt</artifactId>
+                <version>${gwt.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.gwtplatform</groupId>
+                <artifactId>gwtp-all</artifactId>
+                <version>1.5.3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- Projekten belüli függőségek. -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>colleaguestore-facade</artifactId>
+            <version>${project.version}</version>
+            <type>ejb</type>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Külső függőségek. -->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-servlet</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+<!--         <dependency> -->
+<!--             <groupId>com.sencha.gxt</groupId> -->
+<!--             <artifactId>gxt</artifactId> -->
+<!--             <version>${gxt.version}</version> -->
+<!--             <scope>provided</scope> -->
+<!--         </dependency> -->
+<!--         <dependency> -->
+<!--             <groupId>com.sencha.gxt</groupId> -->
+<!--             <artifactId>gxt-theme-triton</artifactId> -->
+<!--             <version>${gxt.version}</version> -->
+<!--             <scope>provided</scope> -->
+<!--         </dependency> -->
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-mvp-client</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-dispatch-rpc-client</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-dispatch-rpc-server-guice</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject.extensions</groupId>
+            <artifactId>guice-servlet</artifactId>
+            <version>3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+</project>

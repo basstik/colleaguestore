@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+
+	<groupId>hu.bme.soft.arch.colleaguestore</groupId>
+	<artifactId>colleaguestore</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>${project.artifactId}</name>
+	<description>Colleaguestore</description>
+
+	<modules>
+		<module>colleaguestore-common</module>
+		<module>colleaguestore-domain</module>
+		<module>colleaguestore-persistence</module>
+		<module>colleaguestore-business</module>
+		<module>colleaguestore-facade</module>
+		<module>colleaguestore-client</module>
+		<module>colleaguestore-ear</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>7.0</version>
+				<scope>provided</scope>
+			</dependency>
+			<!-- <dependency> -->
+			<!-- <groupId>org.wildfly</groupId> -->
+			<!-- <artifactId>wildfly-feature-pack</artifactId> -->
+			<!-- <version>10.0.0.Final</version> -->
+			<!-- <type>pom</type> -->
+			<!-- <scope>import</scope> -->
+			<!-- </dependency> -->
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>wildfly-feature-pack</artifactId>
+				<version>10.0.0.Final</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.21</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+</project>
