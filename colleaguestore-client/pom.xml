@@ -14,9 +14,18 @@
     <description>Colleaguestore GWT kliens</description>
 
     <properties>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <!-- client -->
         <gwt.version>2.7.0</gwt.version>
+        <gwtp.version>1.5.3</gwtp.version>
+        <gin.version>2.1.2</gin.version>
+        
+        <!-- server -->
+        <guice.version>3.0</guice.version>
+        <appengine.version>1.9.17</appengine.version>
+        
+        <!-- testing -->
+        <junit.version>4.12</junit.version>
+        <jukito.version>1.4.1</jukito.version>
     </properties>
 
     <build>
@@ -92,7 +101,7 @@
             <dependency>
                 <groupId>com.gwtplatform</groupId>
                 <artifactId>gwtp-all</artifactId>
-                <version>1.5.3</version>
+                <version>${gwtp.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -108,35 +117,79 @@
             <type>ejb</type>
             <scope>provided</scope>
         </dependency>
+<!--         <dependency> -->
+<!--             <groupId>hu.bme.soft.arch.colleaguestore</groupId> -->
+<!--             <artifactId>colleaguestore-facade</artifactId> -->
+<!--             <version>${project.version}</version> -->
+<!--             <type>ejb</type> -->
+<!--             <scope>provided</scope> -->
+<!--         </dependency> -->
         <!-- Külső függőségek. -->
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
         </dependency>
+        
+        <!-- Google Web Toolkit -->
         <dependency>
             <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-servlet</artifactId>
-            <scope>runtime</scope>
+            <artifactId>gwt-user</artifactId>
         </dependency>
+
+        <!-- GWT-Platform -->
         <dependency>
             <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-mvp-client</artifactId>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-dispatch-rpc-client</artifactId>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-dispatch-rpc-server-guice</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-dispatch-rpc-shared</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-servlet</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- DI -->
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.google.inject.extensions</groupId>
             <artifactId>guice-servlet</artifactId>
-            <version>3.0</version>
+            <version>${guice.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.inject.extensions</groupId>
+            <artifactId>guice-assistedinject</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt.inject</groupId>
+            <artifactId>gin</artifactId>
+        </dependency>
+        
+        <!-- Test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jukito</groupId>
+            <artifactId>jukito</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>

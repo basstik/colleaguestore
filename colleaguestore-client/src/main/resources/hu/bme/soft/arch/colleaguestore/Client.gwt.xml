@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.7.0//EN" "http://gwtproject.org/doctype/2.7.0/gwt-module.dtd">
+<module rename-to="client">
+    
+    <!-- Inherit the core Web Toolkit stuff. -->
+<!--     <inherits name='hu.bme.soft.arch.coleaguestore.Domain' /> -->
+    <inherits name='com.google.gwt.user.User' />
+    <inherits name='com.google.gwt.inject.Inject' />
+
+    <!-- GWTP stuff -->
+    <inherits name='com.gwtplatform.dispatch.Dispatch' />
+    <inherits name='com.gwtplatform.mvp.MvpWithEntryPoint' />
+
+    <!-- Default css -->
+    <inherits name='com.google.gwt.user.theme.standard.Standard' />
+    <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+    <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/> -->
+
+    <!-- Other module inherits -->
+    <inherits name='com.gwtplatform.dispatch.Dispatch' />
+    <inherits name='com.gwtplatform.mvp.MvpWithEntryPoint' />
+
+    <source path='client' />
+    <source path='shared' />
+
+    <set-configuration-property name="gin.ginjector.modules" value="hu.bme.soft.arch.coleaguestore.client.gin.ClientModule"/>
+</module>

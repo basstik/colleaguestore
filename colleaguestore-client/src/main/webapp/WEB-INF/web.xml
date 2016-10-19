@@ -7,7 +7,7 @@
     </welcome-file-list>
 
     <listener>
-        <listener-class>hu.bme.soft.arch.colleaguestore.guice.GuiceServletConfig</listener-class>
+        <listener-class>hu.bme.soft.arch.colleaguestore.server.guice.GuiceServletConfig</listener-class>
     </listener>
 
     <filter>
