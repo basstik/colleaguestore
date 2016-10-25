@@ -23,5 +23,5 @@
     <source path='client' />
     <source path='shared' />
 
-    <set-configuration-property name="gin.ginjector.modules" value="hu.bme.soft.arch.coleaguestore.client.gin.ClientModule"/>
+    <set-configuration-property name="gin.ginjector.modules" value="hu.bme.soft.arch.colleaguestore.client.gin.ClientModule"/>
 </module>
