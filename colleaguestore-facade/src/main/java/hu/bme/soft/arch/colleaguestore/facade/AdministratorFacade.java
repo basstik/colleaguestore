@@ -6,7 +6,9 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-import hu.bme.soft.arch.colleaguestore.client.place.AdministratorDTO;
+import hu.bme.soft.arch.colleaguestore.domain.dto.AdministratorDTO;
+import hu.bme.soft.arch.colleaguestore.domain.dto.AdministratorFilterDTO;
+import hu.bme.soft.arch.colleaguestore.domain.dto.PagingAdministratorDTO;
 import hu.bme.soft.arch.colleaguestore.persistence.AdministratorPersistenceManager;
 import hu.bme.soft.arch.colleaguestore.persistence.entity.Administrator;
 
@@ -16,7 +18,7 @@ public class AdministratorFacade {
 	@Inject
 	AdministratorPersistenceManager administratorPM;
 
-	public List<AdministratorDTO> getAuthors() {
+	public PagingAdministratorDTO getAdministrators(AdministratorFilterDTO authorFilterDTO) {
 		List<AdministratorDTO> administratorDto = new ArrayList<>();
 		List<Administrator> administrarotEntities = administratorPM.findAdministrators();
 
@@ -25,6 +27,6 @@ public class AdministratorFacade {
 					administrator.getLastName()));
 		}
 
-		return administratorDto;
+		return new PagingAdministratorDTO(administratorDto, authorFilterDTO.getOffset(), authorFilterDTO.getLimit());
 	}
 }

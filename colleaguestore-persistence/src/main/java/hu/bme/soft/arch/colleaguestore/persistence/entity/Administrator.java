@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "administrator")
 @NamedQueries({
-		@NamedQuery(name = "Administrator.FindAll", query = "SELECT a FROM Administrator a ORDER BY a.firstName, a.lastName") })
+		@NamedQuery(name = "Administrator.findAll", query = "SELECT a FROM Administrator a ORDER BY a.firstName, a.lastName") })
 public class Administrator extends BaseEntity {
 
 	@Column(name = "first_name", nullable = false, length = 30)

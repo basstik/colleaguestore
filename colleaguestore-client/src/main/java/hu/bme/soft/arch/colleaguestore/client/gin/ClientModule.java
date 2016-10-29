@@ -1,5 +1,6 @@
 package hu.bme.soft.arch.colleaguestore.client.gin;
 
+import com.gwtplatform.dispatch.rpc.client.gin.RpcDispatchAsyncModule;
 import com.gwtplatform.mvp.client.annotations.DefaultPlace;
 import com.gwtplatform.mvp.client.annotations.ErrorPlace;
 import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
@@ -20,6 +21,7 @@ public class ClientModule extends AbstractPresenterModule {
 	protected void configure() {
 		install(new DefaultModule.Builder().tokenFormatter(RouteTokenFormatter.class).build());
 		install(new ApplicationModule());
+		install(new RpcDispatchAsyncModule());
 
 		// DefaultPlaceManager Places
 		bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.home);

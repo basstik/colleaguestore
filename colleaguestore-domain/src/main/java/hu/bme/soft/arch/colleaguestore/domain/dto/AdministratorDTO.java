@@ -1,4 +1,4 @@
-package hu.bme.soft.arch.colleaguestore.client.place;
+package hu.bme.soft.arch.colleaguestore.domain.dto;
 
 public class AdministratorDTO {
 
