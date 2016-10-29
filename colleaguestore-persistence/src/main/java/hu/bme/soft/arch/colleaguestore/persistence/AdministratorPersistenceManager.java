@@ -5,7 +5,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.TypedQuery;
 
-import hu.bme.soft.arch.colleaguestore.persitence.entity.Administrator;
+import hu.bme.soft.arch.colleaguestore.persistence.entity.Administrator;
 
 @Stateless
 public class AdministratorPersistenceManager extends BasePersistenceManager {

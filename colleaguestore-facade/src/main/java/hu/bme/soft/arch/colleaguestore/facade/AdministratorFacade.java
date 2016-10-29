@@ -8,7 +8,7 @@ import javax.inject.Inject;
 
 import hu.bme.soft.arch.colleaguestore.client.place.AdministratorDTO;
 import hu.bme.soft.arch.colleaguestore.persistence.AdministratorPersistenceManager;
-import hu.bme.soft.arch.colleaguestore.persitence.entity.Administrator;
+import hu.bme.soft.arch.colleaguestore.persistence.entity.Administrator;
 
 @Stateless
 public class AdministratorFacade {

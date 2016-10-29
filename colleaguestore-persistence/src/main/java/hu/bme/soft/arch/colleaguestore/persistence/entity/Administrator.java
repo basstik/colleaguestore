@@ -1,4 +1,4 @@
-package hu.bme.soft.arch.colleaguestore.persitence.entity;
+package hu.bme.soft.arch.colleaguestore.persistence.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
