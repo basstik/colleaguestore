@@ -3,7 +3,7 @@
 <module rename-to="client">
     
     <!-- Inherit the core Web Toolkit stuff. -->
-<!--     <inherits name='hu.bme.soft.arch.coleaguestore.Domain' /> -->
+    <inherits name='hu.bme.soft.arch.colleaguestore.Domain' />
     <inherits name='com.google.gwt.user.User' />
     <inherits name='com.google.gwt.inject.Inject' />
 
