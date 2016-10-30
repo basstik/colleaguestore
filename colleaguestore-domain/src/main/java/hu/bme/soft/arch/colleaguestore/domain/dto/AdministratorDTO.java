@@ -1,6 +1,9 @@
 package hu.bme.soft.arch.colleaguestore.domain.dto;
 
-public class AdministratorDTO {
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class AdministratorDTO extends ArrayList<AdministratorDTO> implements Serializable {
 
 	private Long id;
 
