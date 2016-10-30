@@ -10,6 +10,7 @@ import com.gwtplatform.mvp.shared.proxy.RouteTokenFormatter;
 
 import hu.bme.soft.arch.colleaguestore.client.application.ApplicationModule;
 import hu.bme.soft.arch.colleaguestore.client.place.NameTokens;
+import hu.bme.soft.arch.colleaguestore.client.resources.ResourceLoader;
 
 /**
  * See more on setting up the PlaceManager on <a href="// See more on:
@@ -28,6 +29,6 @@ public class ClientModule extends AbstractPresenterModule {
 		bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.home);
 		bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.home);
 
-		// bind(ResourceLoader.class).asEagerSingleton();
+		bind(ResourceLoader.class).asEagerSingleton();
 	}
 }
