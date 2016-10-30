@@ -2,6 +2,7 @@ package hu.bme.soft.arch.colleaguestore.client.resources;
 
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
+import com.google.gwt.resources.client.TextResource;
 
 public interface Resources extends ClientBundle {
 
@@ -17,6 +18,9 @@ public interface Resources extends ClientBundle {
 		// String usernameInHeader();
 	}
 
-	// @Source("css/client.gss")
-	// Style style();
+	@Source("css/client.gss")
+	Style style();
+
+	@Source("css/data-table.css")
+	TextResource dataTable();
 }
