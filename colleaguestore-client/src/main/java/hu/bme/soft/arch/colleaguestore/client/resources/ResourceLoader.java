@@ -7,5 +7,6 @@ public class ResourceLoader {
 	@Inject
 	ResourceLoader(Resources resources) {
 		resources.style().ensureInjected();
+		// resources.dataTable().ensureInjected();
 	}
 }

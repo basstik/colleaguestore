@@ -14,10 +14,6 @@
 	<!-- Default css -->
 	<inherits name='com.google.gwt.user.theme.standard.Standard' />
 
-	<!-- Dev Properties -->
-	<set-property name="gwt.logging.logLevel" value="ALL" />
-	<set-property name="gwt.logging.developmentModeHandler" value="ENABLED" />
-
 	<source path='client' />
 	<source path='shared' />
 
