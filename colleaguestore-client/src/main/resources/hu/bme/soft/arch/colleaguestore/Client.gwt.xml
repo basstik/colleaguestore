@@ -11,12 +11,15 @@
 	<inherits name='com.gwtplatform.dispatch.Dispatch' />
 	<inherits name='com.gwtplatform.mvp.MvpWithEntryPoint' />
 
+	<set-configuration-property name="gin.ginjector.modules"
+		value="hu.bme.soft.arch.colleaguestore.client.gin.ClientModule" />
+	<set-configuration-property name="CssResource.enableGss"
+		value="true" />
+
 	<!-- Default css -->
 	<inherits name='com.google.gwt.user.theme.standard.Standard' />
 
 	<source path='client' />
 	<source path='shared' />
 
-	<set-configuration-property name="gin.ginjector.modules" 
-	    value="hu.bme.soft.arch.colleaguestore.client.gin.ClientModule" />
 </module>
