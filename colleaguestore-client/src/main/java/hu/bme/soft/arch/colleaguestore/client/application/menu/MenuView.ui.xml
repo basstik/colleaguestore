@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" 
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client" 
+             xmlns:row="urn:import:com.sencha.gxt.widget.core.client.container"
+             xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container" 
+             xmlns:grid="urn:import:com.sencha.gxt.widget.core.client.grid"
+             xmlns:form="urn:import:com.sencha.gxt.widget.core.client.form" 
+             xmlns:toolbar="urn:import:com.sencha.gxt.widget.core.client.toolbar"
+             xmlns:button="urn:import:com.sencha.gxt.widget.core.client.button">
+
+    <ui:with field="resources" type="hu.bme.soft.arch.colleaguestore.client.resources.Resources" />
+
+    <ui:with type="com.sencha.gxt.core.client.util.Margins" field="margins0500">
+        <ui:attributes top="0" right="5" bottom="0" left="0" />
+    </ui:with>
+
+    <ui:with type="com.sencha.gxt.core.client.util.Padding" field="padding5">
+        <ui:attributes top="5" right="5" bottom="5" left="5" />
+    </ui:with>
+
+    <ui:with type="com.sencha.gxt.widget.core.client.container.BoxLayoutContainer.BoxLayoutData" field="boxLayoutDataMargins0500">
+        <ui:attributes margins="{margins0500}" />
+    </ui:with>
+    
+    <ui:with type="com.sencha.gxt.widget.core.client.container.BoxLayoutContainer.BoxLayoutData" field="boxLayoutDataMargins0500Flex1">
+        <ui:attributes margins="{margins0500}" flex="1" />
+    </ui:with>
+
+    <container:HBoxLayoutContainer HBoxLayoutAlign="STRETCH">
+        <container:child>
+            <container:HBoxLayoutContainer padding="{padding5}" HBoxLayoutAlign="MIDDLE">
+                <g:Label text="ColleagueStore" styleName="{resources.style.logo}"/>
+            </container:HBoxLayoutContainer>
+        </container:child>
+        <container:child layoutData="{boxLayoutDataMargins0500}">
+            <button:TextButton ui:field="personNavigationButton" text="Persons" />
+        </container:child>
+        <container:child layoutData="{boxLayoutDataMargins0500}">
+            <button:TextButton ui:field="teamNavigationButton" text="Teams" />
+        </container:child>
+        <container:child layoutData="{boxLayoutDataMargins0500Flex1}">
+            <g:Label />
+        </container:child>
+        <container:child>
+            <container:HBoxLayoutContainer padding="{padding5}" HBoxLayoutAlign="MIDDLE">
+                <g:Label styleName="{resources.style.usernameInHeader}" ui:field="username" />
+            </container:HBoxLayoutContainer>
+        </container:child>
+<!--         <container:child> -->
+<!--             <button:TextButton text="Logout" ui:field="logout" /> -->
+<!--         </container:child> -->
+    </container:HBoxLayoutContainer>
+
+</ui:UiBinder>

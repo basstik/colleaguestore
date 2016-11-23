@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE xml>
-<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
-    <g:SimplePanel ui:field="main"/>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui"
+    xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client" xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+    xmlns:form="urn:import:com.sencha.gxt.widget.core.client.form">
+
+    <ui:with field="resources" type="hu.bme.soft.arch.colleaguestore.client.resources.Resources" />
+
+    <ui:with type="com.sencha.gxt.core.client.util.Margins" field="outerMargins">
+        <ui:attributes top="0" right="0" bottom="10" left="0" />
+    </ui:with>
+
+    <ui:with type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData"
+        field="menuData">
+        <ui:attributes width="1" height="80" margins="{outerMargins}" />
+    </ui:with>
+
+    <ui:with type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData"
+        field="contentData">
+        <ui:attributes width="1" height="0.95" margins="{outerMargins}" />
+    </ui:with>
+
+    <ui:with type="com.sencha.gxt.widget.core.client.container.HorizontalLayoutContainer.HorizontalLayoutData"
+        field="centerLayoutData">
+        <ui:attributes height="1" />
+    </ui:with>
+
+    <ui:with type="com.sencha.gxt.widget.core.client.container.HorizontalLayoutContainer.HorizontalLayoutData"
+        field="sideLayoutData">
+        <ui:attributes width=".5" height="1" />
+    </ui:with>
+
+    <container:Viewport borders="true">
+        <container:child>
+            <container:VerticalLayoutContainer>
+                <container:child layoutData="{menuData}">
+                    <container:SimpleContainer ui:field="menu" styleName="{resources.style.menuContainerColor}" />
+                </container:child>
+                <container:child layoutData="{contentData}">
+                    <container:HorizontalLayoutContainer>
+                        <container:child layoutData="{sideLayoutData}">
+                            <g:FlexTable />
+                        </container:child>
+                        <container:child layoutData="{centerLayoutData}">
+                            <container:SimpleContainer ui:field="content" />
+                        </container:child>
+                        <container:child layoutData="{sideLayoutData}">
+                            <g:FlexTable />
+                        </container:child>
+                    </container:HorizontalLayoutContainer>
+                </container:child>
+            </container:VerticalLayoutContainer>
+        </container:child>
+    </container:Viewport>
+    
 </ui:UiBinder>

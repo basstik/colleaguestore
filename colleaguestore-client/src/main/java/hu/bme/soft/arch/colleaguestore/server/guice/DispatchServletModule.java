@@ -5,14 +5,14 @@ import com.google.inject.servlet.ServletModule;
 import com.gwtplatform.dispatch.rpc.server.guice.DispatchServiceImpl;
 import com.gwtplatform.dispatch.rpc.shared.ActionImpl;
 
-import hu.bme.soft.arch.colleaguestore.facade.AdministratorFacade;
+import hu.bme.soft.arch.colleaguestore.facade.PersonFacade;
 
 public class DispatchServletModule extends ServletModule {
 
-	private final AdministratorFacade administratorFacade;
+	private final PersonFacade personFacade;
 
-	public DispatchServletModule(AdministratorFacade administratorFacade) {
-		this.administratorFacade = administratorFacade;
+	public DispatchServletModule(PersonFacade personFacade) {
+		this.personFacade = personFacade;
 	}
 
 	@Override
@@ -22,7 +22,7 @@ public class DispatchServletModule extends ServletModule {
 	}
 
 	@Provides
-	AdministratorFacade createAdministratorFacade() {
-		return administratorFacade;
+	PersonFacade createPersonFacade() {
+		return personFacade;
 	}
 }

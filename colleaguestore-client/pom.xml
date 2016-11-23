@@ -23,6 +23,7 @@
 		<gwt.version>2.8.0</gwt.version>
 		<gwtp.version>1.5.3</gwtp.version>
 		<gin.version>2.1.2</gin.version>
+		<gxt.version>4.0.1</gxt.version>
 
 		<!-- server -->
 		<guice.version>3.0</guice.version>
@@ -133,12 +134,19 @@
 			<type>ejb</type>
 			<scope>provided</scope>
 		</dependency>
+		
 		<!-- Külső függőségek. -->
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>com.sencha.gxt</groupId>
+			<artifactId>gxt</artifactId>
+			<version>4.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		
 		<!-- Google Web Toolkit -->
 		<dependency>
 			<groupId>com.google.gwt</groupId>
@@ -187,15 +195,10 @@
 			<scope>provided</scope>
 		</dependency>
 
-      <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
-        </dependency>
-		<!-- <dependency> -->
-		<!-- <groupId>com.github.gwtmaterialdesign</groupId> -->
-		<!-- <artifactId>gwt-material-table</artifactId> -->
-		<!-- <version>${gwt-material-table.version}</version> -->
-		<!-- </dependency> -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
 	</dependencies>
 </project>

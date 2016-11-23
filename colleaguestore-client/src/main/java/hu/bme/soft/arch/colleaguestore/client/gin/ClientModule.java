@@ -25,9 +25,9 @@ public class ClientModule extends AbstractPresenterModule {
 		install(new RpcDispatchAsyncModule());
 
 		// DefaultPlaceManager Places
-		bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.home);
-		bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.home);
-		bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.home);
+		bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.PERSON);
+		bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.PERSON);
+		bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.PERSON);
 
 		bind(ResourceLoader.class).asEagerSingleton();
 	}

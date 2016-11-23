@@ -2,10 +2,11 @@
 <!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.7.0//EN" "http://gwtproject.org/doctype/2.7.0/gwt-module.dtd">
 <module rename-to="client">
 
-	<!-- Inherit the core Web Toolkit stuff. -->
+	<!-- Other module inherits -->
 	<inherits name='hu.bme.soft.arch.colleaguestore.Domain' />
-	<inherits name='com.google.gwt.user.User' />
-	<inherits name='com.google.gwt.inject.Inject' />
+	<inherits name='com.sencha.gxt.ui.GXT' />
+<!--     <inherits name='com.google.common.base.Base' /> -->
+<inherits name="com.google.gwt.logging.Logging" />
 
 	<!-- GWTP stuff -->
 	<inherits name='com.gwtplatform.dispatch.Dispatch' />
@@ -15,6 +16,9 @@
 		value="hu.bme.soft.arch.colleaguestore.client.gin.ClientModule" />
 	<set-configuration-property name="CssResource.enableGss"
 		value="true" />
+   
+    <!-- GXT Stylesheet -->
+	<stylesheet src="reset.css" />
 
 	<!-- Default css -->
 	<inherits name='com.google.gwt.user.theme.standard.Standard' />

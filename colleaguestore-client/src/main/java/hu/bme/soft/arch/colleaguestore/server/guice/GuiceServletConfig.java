@@ -6,15 +6,15 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.servlet.GuiceServletContextListener;
 
-import hu.bme.soft.arch.colleaguestore.facade.AdministratorFacade;
+import hu.bme.soft.arch.colleaguestore.facade.PersonFacade;
 
 public class GuiceServletConfig extends GuiceServletContextListener {
 
 	@EJB
-	private AdministratorFacade administratorFacade;
+	private PersonFacade personFacade;
 
 	@Override
 	protected Injector getInjector() {
-		return Guice.createInjector(new ServerModule(), new DispatchServletModule(administratorFacade));
+		return Guice.createInjector(new ServerModule(), new DispatchServletModule(personFacade));
 	}
 }

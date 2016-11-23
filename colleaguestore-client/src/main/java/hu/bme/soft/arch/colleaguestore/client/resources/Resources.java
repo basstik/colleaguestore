@@ -5,21 +5,18 @@ import com.google.gwt.resources.client.CssResource;
 
 public interface Resources extends ClientBundle {
 
-	interface Style extends CssResource {
+    interface Style extends CssResource {
 
-		// @ClassName("bookstore_logo")
-		// String bookstoreLogo();
-		//
-		// @ClassName("menu_container_color")
-		// String menuContainerColor();
-		//
-		// @ClassName("username_in_header")
-		// String usernameInHeader();
-	}
+        @ClassName("bookstore_logo")
+        String logo();
 
-	@Source("css/client.gss")
-	Style style();
+        @ClassName("menu_container_color")
+        String menuContainerColor();
 
-	// @Source("css/data-table.css")
-	// TextResource dataTable();
+        @ClassName("username_in_header")
+        String usernameInHeader();
+    }
+
+    @Source("css/client.gss")
+    Style style();
 }

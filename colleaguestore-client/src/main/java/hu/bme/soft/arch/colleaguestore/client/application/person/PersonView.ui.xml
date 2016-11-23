@@ -1,0 +1,81 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui"
+    xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client" xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+    xmlns:toolbar="urn:import:com.sencha.gxt.widget.core.client.toolbar" xmlns:form="urn:import:com.sencha.gxt.widget.core.client.form"
+    xmlns:grid="urn:import:com.sencha.gxt.widget.core.client.grid" xmlns:button="urn:import:com.sencha.gxt.widget.core.client.button">
+
+    <ui:with type="com.sencha.gxt.data.shared.ListStore" field="store" />
+
+    <ui:with type="com.sencha.gxt.widget.core.client.grid.ColumnModel" field="cm" />
+
+    <ui:with type="com.sencha.gxt.widget.core.client.grid.GridView" field="view">
+        <ui:attributes stripeRows="true" />
+    </ui:with>
+
+    <ui:with type="com.sencha.gxt.data.shared.loader.PagingLoader" field="loader" />
+
+    <ui:with type="com.sencha.gxt.data.shared.StringLabelProvider" field="labelProvider" />
+
+
+   <ui:import field='com.sencha.gxt.core.client.Style.SelectionMode.SINGLE' />
+
+    <ui:with type="com.sencha.gxt.widget.core.client.grid.GridSelectionModel" field="gridSM">
+        <ui:attributes selectionMode="{SINGLE}"></ui:attributes>
+    </ui:with>
+
+    <ui:with type="com.sencha.gxt.core.client.util.Margins" field="southMargins">
+        <ui:attributes top="0" right="2" bottom="2" left="2" />
+    </ui:with>
+
+    <ui:with type="com.sencha.gxt.core.client.util.Margins" field="centerMargins">
+        <ui:attributes top="0" right="2" bottom="0" left="2" />
+    </ui:with>
+
+    <ui:with type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData"
+        field="vData1">
+        <ui:attributes width="1" height="-1" />
+    </ui:with>
+
+    <ui:with type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData"
+        field="vData2">
+        <ui:attributes width="1" height="-1" />
+    </ui:with>
+
+    <ui:with type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData" field="northData">
+        <ui:attributes size="88" />
+    </ui:with>
+
+    <ui:with type="com.sencha.gxt.widget.core.client.container.MarginData" field="centerData">
+        <ui:attributes margins="{centerMargins}" />
+    </ui:with>
+
+    <ui:with type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData" field="southData">
+        <ui:attributes size="40" margins="{southMargins}" />
+    </ui:with>
+
+    <container:BorderLayoutContainer width="582">
+        <container:north layoutData="{northData}">
+            <container:VerticalLayoutContainer >
+                <container:child layoutData="{vData1}">
+                    <gxt:ContentPanel heading="Authors" />
+                </container:child>
+                <container:child layoutData="{vData2}">
+                    <toolbar:ToolBar>
+                        <button:TextButton ui:field="addPersonBtn" text="Add" />
+                        <toolbar:FillToolItem />
+                        <button:TextButton ui:field="editPersonBtn" text="Edit" />
+                        <button:TextButton ui:field="deletePersonBtn" text="Delete" />
+                    </toolbar:ToolBar>
+                </container:child>
+            </container:VerticalLayoutContainer>
+        </container:north>
+        <container:center layoutData="{centerData}">
+            <grid:Grid ui:field="grid" store="{store}" cm="{cm}" view="{view}" loader="{loader}" loadMask="true"
+                columnReordering="true" selectionModel="{gridSM}" />
+        </container:center>
+        <container:south layoutData="{southData}">
+            <toolbar:PagingToolBar pageSize="50" ui:field="toolBar" />
+        </container:south>
+    </container:BorderLayoutContainer>
+
+</ui:UiBinder>
