@@ -14,8 +14,9 @@ public abstract class BasePersistenceManager<T> {
 		return em;
 	}
 
-	public void persist(T entity) {
+	public T persist(T entity) {
 		getEntityManager().persist(entity);
+		return entity;
 	}
 
 	public T find(Long id) {
@@ -23,7 +24,7 @@ public abstract class BasePersistenceManager<T> {
 	}
 
 	public void remove(Long id) {
-		getEntityManager().remove(id);
+		getEntityManager().remove(find(id));
 	}
 
 	public abstract Class<T> getEntityClass();
