@@ -76,7 +76,7 @@ public class PersonPresenter extends Presenter<PersonPresenter.MyView, PersonPre
 
 			@Override
 			public void onSuccess(UpdatePersonTableResult result) {
-				// logger.info("Author tábla adatai sikeresen megérkeztek.");
+				// logger.info("Person tábla adatai sikeresen megérkeztek.");
 				callback.onSuccess(new PersonGridLoadResult(result.getPagingPersonDTO()));
 			}
 		});
@@ -98,7 +98,7 @@ public class PersonPresenter extends Presenter<PersonPresenter.MyView, PersonPre
 
 	@Override
 	public void deletePerson(Long personId) {
-		// logger.fine("Törlendő Actor id elküldése a szervernek." + " Id
+		// logger.fine("Törlendő Person id elküldése a szervernek." + " Id
 		// értéke: " + personId);
 		DeletePersonAction action = new DeletePersonAction(personId);
 		dispatcher.execute(action, new AsyncCallback<DeletePersonResult>() {

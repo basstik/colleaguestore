@@ -19,7 +19,7 @@ public class CreatePersonAction extends UnsecuredActionImpl<CreatePersonResult> 
 		this.personDto = personDto;
 	}
 
-	public PersonDTO getAuthorDto() {
+	public PersonDTO getPesronDto() {
 		return personDto;
 	}
 

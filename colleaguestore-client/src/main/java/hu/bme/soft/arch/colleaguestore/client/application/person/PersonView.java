@@ -89,7 +89,7 @@ class PersonView extends ViewWithUiHandlers<PersonUiHandlers> implements PersonP
 
 		cm = new ColumnModel<>(columns);
 		store = new ListStore<>(props.key());
-		loader = createAuthorGridPagingLoader();
+		loader = createPersonGridPagingLoader();
 		initWidget(uiBinder.createAndBindUi(this));
 		toolBar.bind(loader);
 
@@ -120,7 +120,7 @@ class PersonView extends ViewWithUiHandlers<PersonUiHandlers> implements PersonP
 		};
 	}
 
-	private PagingLoader<PagingLoadConfig, PagingLoadResult<PersonDTO>> createAuthorGridPagingLoader() {
+	private PagingLoader<PagingLoadConfig, PagingLoadResult<PersonDTO>> createPersonGridPagingLoader() {
 		PagingLoader<PagingLoadConfig, PagingLoadResult<PersonDTO>> loader = new PagingLoader<>(
 				new DataProxy<PagingLoadConfig, PagingLoadResult<PersonDTO>>() {
 
@@ -138,14 +138,14 @@ class PersonView extends ViewWithUiHandlers<PersonUiHandlers> implements PersonP
 	}
 
 	@UiHandler("addPersonBtn")
-	public void onAddAuthorBtnSelected(SelectEvent event) {
-		// logger.fine("Author hozzáadása gombra kattintás.");
+	public void onAddPersonBtnSelected(SelectEvent event) {
+		// logger.fine("Person hozzáadása gombra kattintás.");
 		getUiHandlers().showAddPersonPopup();
 	}
 
 	@UiHandler("editPersonBtn")
-	public void onEditAuthorBtnSelected(SelectEvent event) {
-		// logger.fine("Author szerkesztés gombra kattintás.");
+	public void onEditPersonBtnSelected(SelectEvent event) {
+		// logger.fine("Person szerkesztés gombra kattintás.");
 		PersonDTO person = grid.getSelectionModel().getSelectedItem();
 		if (person != null) {
 			getUiHandlers().showEditPersonPopup(person);
@@ -155,11 +155,11 @@ class PersonView extends ViewWithUiHandlers<PersonUiHandlers> implements PersonP
 	}
 
 	@UiHandler("deletePersonBtn")
-	public void onDeleteAuthorBtnSelected(SelectEvent event) {
-		// logger.fine("Author törlés gombra kattintás.");
+	public void onDeletePersonBtnSelected(SelectEvent event) {
+		// logger.fine("Person törlés gombra kattintás.");
 		final PersonDTO person = grid.getSelectionModel().getSelectedItem();
 		if (person != null) {
-			RemoveDialog mb = new RemoveDialog("Are you sure you want remove this author?") {
+			RemoveDialog mb = new RemoveDialog("Are you sure you want remove this person?") {
 
 				@Override
 				protected void onRemove() {
@@ -168,7 +168,7 @@ class PersonView extends ViewWithUiHandlers<PersonUiHandlers> implements PersonP
 			};
 			mb.show();
 		} else {
-			Info.display("Warning", "Select one author!");
+			Info.display("Warning", "Select one person!");
 		}
 	}
 

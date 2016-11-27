@@ -40,11 +40,8 @@ public class PersonPopupPresenter extends PresenterWidget<PersonPopupPresenter.M
 	private PlaceManager placeManager;
 
 	@Inject
-	// PersonPopupPresenter(EventBus eventBus, MyView view, Logger logger,
-	// PlaceManager placeManager,
 	PersonPopupPresenter(EventBus eventBus, MyView view, PlaceManager placeManager, DispatchAsync dispatcher) {
 		super(eventBus, view);
-		// this.logger = logger;
 		this.placeManager = placeManager;
 		this.dispatcher = dispatcher;
 		getView().setUiHandlers(this);
@@ -62,7 +59,7 @@ public class PersonPopupPresenter extends PresenterWidget<PersonPopupPresenter.M
 
 	@Override
 	public void createPerson(PersonDTO person) {
-		// logger.fine("Új Actor adatok elküldése a szervernek.");
+		// logger.fine("Új Person adatok elküldése a szervernek.");
 		CreatePersonAction action = new CreatePersonAction(person);
 		dispatcher.execute(action, new AsyncCallback<CreatePersonResult>() {
 
@@ -83,7 +80,7 @@ public class PersonPopupPresenter extends PresenterWidget<PersonPopupPresenter.M
 
 	@Override
 	public void updatePerson(PersonDTO person) {
-		// logger.fine("Módosított Actor adatok elküldése a szervernek.");
+		// logger.fine("Módosított Person adatok elküldése a szervernek.");
 		UpdatePersonAction action = new UpdatePersonAction(person);
 		dispatcher.execute(action, new AsyncCallback<UpdatePersonResult>() {
 

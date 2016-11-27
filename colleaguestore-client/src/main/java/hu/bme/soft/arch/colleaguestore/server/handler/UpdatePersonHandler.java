@@ -16,7 +16,7 @@ public class UpdatePersonHandler implements ActionHandler<UpdatePersonAction, Up
 
 	@Override
 	public UpdatePersonResult execute(UpdatePersonAction action, ExecutionContext arg1) throws ActionException {
-		facade.updatePerson(action.getAuthorDto());
+		facade.updatePerson(action.getPersonDto());
 		return new UpdatePersonResult();
 	}
 

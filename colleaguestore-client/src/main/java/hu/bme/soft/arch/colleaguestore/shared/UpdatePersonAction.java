@@ -19,7 +19,7 @@ public class UpdatePersonAction extends UnsecuredActionImpl<UpdatePersonResult> 
 		this.personDto = personDto;
 	}
 
-	public PersonDTO getAuthorDto() {
+	public PersonDTO getPersonDto() {
 		return personDto;
 	}
 

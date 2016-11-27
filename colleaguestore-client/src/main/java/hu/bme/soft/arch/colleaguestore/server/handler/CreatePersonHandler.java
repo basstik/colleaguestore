@@ -16,7 +16,7 @@ public class CreatePersonHandler implements ActionHandler<CreatePersonAction, Cr
 
 	@Override
 	public CreatePersonResult execute(CreatePersonAction action, ExecutionContext arg1) throws ActionException {
-		facade.createPerson(action.getAuthorDto());
+		facade.createPerson(action.getPesronDto());
 		return new CreatePersonResult();
 	}
 

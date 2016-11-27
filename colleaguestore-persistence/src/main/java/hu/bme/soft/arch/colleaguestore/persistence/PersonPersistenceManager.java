@@ -19,12 +19,12 @@ public class PersonPersistenceManager extends BasePersistenceManager<Person> {
 	public List<Person> getPersons(PersonFilterDTO personFilterDTO) {
 		CriteriaBuilder cb = getEntityManager().getCriteriaBuilder();
 		CriteriaQuery<Person> cq = cb.createQuery(Person.class);
-		Root<Person> author = cq.from(Person.class);
+		Root<Person> person = cq.from(Person.class);
 		List<Order> orderList = new ArrayList<>();
 
-		cq.select(author);
-		orderList.add(cb.asc(author.get("firstName")));
-		orderList.add(cb.asc(author.get("lastName")));
+		cq.select(person);
+		orderList.add(cb.asc(person.get("firstName")));
+		orderList.add(cb.asc(person.get("lastName")));
 		cq.orderBy(orderList);
 
 		TypedQuery<Person> q = getEntityManager().createQuery(cq);
