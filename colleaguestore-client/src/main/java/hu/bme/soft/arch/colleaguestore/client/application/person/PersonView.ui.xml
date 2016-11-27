@@ -42,7 +42,7 @@
     </ui:with>
 
     <ui:with type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData" field="northData">
-        <ui:attributes size="88" />
+        <ui:attributes size="53" />
     </ui:with>
 
     <ui:with type="com.sencha.gxt.widget.core.client.container.MarginData" field="centerData">
@@ -53,11 +53,11 @@
         <ui:attributes size="40" margins="{southMargins}" />
     </ui:with>
 
-    <container:BorderLayoutContainer width="582">
+    <container:BorderLayoutContainer width="730">
         <container:north layoutData="{northData}">
             <container:VerticalLayoutContainer >
                 <container:child layoutData="{vData1}">
-                    <gxt:ContentPanel heading="Authors" />
+                    <gxt:ContentPanel heading="Persons" />
                 </container:child>
                 <container:child layoutData="{vData2}">
                     <toolbar:ToolBar>

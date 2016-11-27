@@ -28,10 +28,12 @@ import hu.bme.soft.arch.colleaguestore.domain.enumeration.Position;
 		@NamedQuery(name = "Person.findAll", query = "SELECT a FROM Person a ORDER BY a.firstName, a.lastName") })
 public class Person extends BaseEntity {
 
-	@Column(name = "first_name", nullable = true, length = 30)
+	private static final long serialVersionUID = 1L;
+
+	@Column(name = "first_name", nullable = false, length = 30)
 	private String firstName;
 
-	@Column(name = "last_name", nullable = true, length = 30)
+	@Column(name = "last_name", nullable = false, length = 30)
 	private String lastName;
 
 	@Column(name = "nationality", nullable = true, length = 30)

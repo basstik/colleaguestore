@@ -5,10 +5,7 @@ import com.gwtplatform.dispatch.rpc.server.ExecutionContext;
 import com.gwtplatform.dispatch.rpc.server.actionhandler.ActionHandler;
 import com.gwtplatform.dispatch.shared.ActionException;
 
-import hu.bme.soft.arch.colleaguestore.facade.PersonFacade;
 import hu.bme.soft.arch.colleaguestore.facade.TeamFacade;
-import hu.bme.soft.arch.colleaguestore.shared.UpdatePersonTableAction;
-import hu.bme.soft.arch.colleaguestore.shared.UpdatePersonTableResult;
 import hu.bme.soft.arch.colleaguestore.shared.UpdateTeamTableAction;
 import hu.bme.soft.arch.colleaguestore.shared.UpdateTeamTableResult;
 

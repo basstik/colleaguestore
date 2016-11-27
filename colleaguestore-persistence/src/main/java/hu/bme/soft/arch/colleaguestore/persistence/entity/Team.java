@@ -11,17 +11,21 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "team")
 @NamedQueries({ @NamedQuery(name = "Team.findAll", query = "SELECT a FROM Team a ORDER BY a.name") })
 public class Team extends BaseEntity {
 
+	private static final long serialVersionUID = 2L;
+
 	@Column(name = "name", nullable = true, length = 30)
 	private String name;
 
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "BOSS_ID")
+	@NotNull
 	private Person boss;
 
 	@ManyToMany(mappedBy = "teams")
