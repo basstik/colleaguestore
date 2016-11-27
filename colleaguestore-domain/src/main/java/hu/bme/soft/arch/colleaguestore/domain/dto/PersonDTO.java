@@ -43,7 +43,7 @@ public class PersonDTO implements Serializable {
 		this.lastName = lastName;
 		this.nationality = nationality;
 		this.dateOfBirth = dateOfBirth;
-		this.position = Position.ADMINISTRATOR;
+		this.position = position;
 	}
 
 	public Long getId() {

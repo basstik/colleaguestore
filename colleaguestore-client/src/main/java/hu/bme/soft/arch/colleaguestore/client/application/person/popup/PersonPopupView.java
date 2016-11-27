@@ -20,6 +20,7 @@ import com.sencha.gxt.widget.core.client.info.Info;
 
 import hu.bme.soft.arch.colleaguestore.client.application.common.GXTPopupViewWithUiHandlers;
 import hu.bme.soft.arch.colleaguestore.domain.dto.PersonDTO;
+import hu.bme.soft.arch.colleaguestore.domain.enumeration.Position;
 
 class PersonPopupView extends GXTPopupViewWithUiHandlers<PersonPopupUiHandlers>
 		implements PersonPopupPresenter.MyView, Editor<PersonDTO> {
@@ -88,6 +89,7 @@ class PersonPopupView extends GXTPopupViewWithUiHandlers<PersonPopupUiHandlers>
 		if (firstName.isValid() && lastName.isValid() && nationality.isValid()
 				&& (dateOfBirth.getValue() == null || dateOfBirth.validate())) {
 			PersonDTO person = driver.flush();
+			person.setPosition(Position.OPERATOR);
 			getUiHandlers().createPerson(person);
 		}
 	}
